@@ -7,9 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-/**
- * Created by Naveen on 15-10-2015.
- */
 public class MyDBHandler extends SQLiteOpenHelper {
     private final String TAG = "com.example.naveen.gps_tracking_with_sql";
 
@@ -50,6 +47,13 @@ public class MyDBHandler extends SQLiteOpenHelper {
         Log.i(TAG, "ADDTION HAPPENED");
 
     }
+
+    public void deletingDatabase(){
+        SQLiteDatabase db = getReadableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE_LOCATION+";");
+        onCreate(db);
+    }
+
     public String databaseToString(){
         String dbString="";
         SQLiteDatabase db = getReadableDatabase();

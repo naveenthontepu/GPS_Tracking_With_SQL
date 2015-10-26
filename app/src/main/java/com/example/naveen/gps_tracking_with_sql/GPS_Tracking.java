@@ -5,11 +5,10 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class GPS_Tracking extends AppCompatActivity {
-    TextView updated_Data;
+//    TextView updated_Data;
     TextView database_printing;
     MyDBHandler dbhandler1;
     private int servicevariable=1;
@@ -50,10 +49,15 @@ public class GPS_Tracking extends AppCompatActivity {
 
 
     }
+    public void destroy_database(View view){
 
-    public void update_text(String s){
+        dbhandler1.deletingDatabase();
+        database_printing.setText("Previous Data Deleted");
+    }
+
+    /*public void update_text(String s){
         updated_Data = (TextView)findViewById(R.id.updated_Data);
         updated_Data.setText(s);
 
-    }
+    }*/
 }
