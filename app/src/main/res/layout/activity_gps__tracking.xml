@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".GPS_Tracking">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitude\t Longitude \t Timestamp"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/updated_Data"
+        android:textColor="#000"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/updated_Data"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:id="@+id/Buttons_layout"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Tracking"
+            android:onClick="startTracking"
+            android:layout_weight="1"
+            android:id="@+id/Start_Tracking"
+            android:background="@color/colorPrimary"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:layout_marginRight="2dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop Tracking"
+            android:onClick="stopTracking"
+            android:layout_weight="1"
+            android:id="@+id/Stop_Tracking"
+            android:background="@color/colorPrimary"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:layout_marginLeft="2dp"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/Buttons_layout"
+        android:id="@+id/display_Database"
+        android:background="@color/colorPrimary"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:layout_marginTop="3dp"
+        android:text="Display Database"
+        android:onClick="display_database"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/display_Database"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/database_printing"
+            android:text="n\n\n\n\n\n\n\n\n\n\n\n\nn\n\n\n\n\n\n\n\n\nn\\n\n\n\n\n\n\\n\n\n\n\nnnn"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#000"
+
+            />
+
+    </ScrollView>
+
+</RelativeLayout>
